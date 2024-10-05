@@ -14,14 +14,17 @@ function closeModal() {
 function addMedicine() {
     const name = document.getElementById('medName').value;
     const type = document.getElementById('medType').value;
-    const quantity = document.getElementById('medQty').value;
+    const Selectquantity = document.querySelector('#medQty');
+    const quantity =Selectquantity.value;
+    const medSheet=document.getElementById('medSheet').value;
+    const qty = eval(quantity.replace('X', '*'))*(0+(1*medSheet));
     const expiryDate = document.getElementById('medExpiry').value;
     const rack = document.getElementById('medRack').value;
     const boxNo = document.getElementById('medBoxNo').value;
 
     // Check if all fields are filled
     if (name && type && quantity && expiryDate && rack && boxNo) {
-        const medicine = { name, type, quantity, expiryDate, rack, boxNo };
+        const medicine = { name, type, quantity,medSheet,qty, expiryDate, rack, boxNo };
         
         // Add the new medicine to the inventory array
         medicineInventory.push(medicine);
@@ -50,6 +53,8 @@ function renderTable() {
                         <td>${medicine.name}</td>
                         <td>${medicine.type}</td>
                         <td>${medicine.quantity}</td>
+                        <td>${medicine.medSheet}</td>
+                         <td>${medicine.qty}</td>
                         <td>${medicine.expiryDate}</td>
                         <td>${medicine.rack}</td>
                         <td>${medicine.boxNo}</td>

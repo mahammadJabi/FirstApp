@@ -29,6 +29,8 @@
                     <th>Name</th>
                     <th>Type</th>
                     <th>Quantity</th>
+                    <th>Tablet Sheet</th>
+                    <th>Quantity in Number's</th>
                     <th>Expiry Date</th>
                     <th>Rack</th>
                     <th>Box No</th>
@@ -41,7 +43,6 @@
         </table>
     </div>
 
-    <!-- Modal for Adding Medicine -->
     <!-- Modal for Adding Medicine -->
 <div id="medicineModal" class="modal">
     <div class="modal-content">
@@ -61,10 +62,21 @@
             <div class="form-row">
                 <div class="form-group">
                     <label for="medQty">Quantity:</label>
-                    <input type="number" id="medQty" placeholder="Enter quantity" required>
+                    <select type="text" id="medQty" placeholder="Enter quantity" required>
+                            <option value="4X2">4X2</option>
+                            <option value="6X2">6X2</option>
+                            <option value="8X2">8X2</option>
+                            <option value="10X2">10X2</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="medExpiry">Expiry Date:</label>
+                    <label for="medSheet">Tablet Sheet:</label>
+                    <input type="number" id="medSheet" placeholder="" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+            <label for="medExpiry">Expiry Date:</label>
                     <input type="date" id="medExpiry" required>
                 </div>
             </div>
