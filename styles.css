@@ -7,16 +7,67 @@ body {
     padding: 0;
 }
 
+header {
+    background-color: #4CAF50;
+    padding: 10px;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Page Content */
+.content {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.content h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.content p {
+    font-size: 20px;
+    color: #555;
+}
+
+.content button {
+    padding: 15px 25px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.content button:hover {
+    background-color: #45a049;
+}
+
+/* Table and Modal (Medicine Inventory Page) */
 .container {
     width: 90%;
     margin: 20px auto;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
 }
 
 h1 {
@@ -24,7 +75,6 @@ h1 {
     color: #4CAF50;
 }
 
-/* Button Styling */
 button {
     padding: 10px 15px;
     border: none;
@@ -52,11 +102,6 @@ button {
     width: 100%;
 }
 
-.btn-save:hover {
-    background-color: #45a049;
-}
-
-/* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -81,23 +126,6 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-td {
-    font-size: 16px;
-}
-
-table button {
-    padding: 5px 10px;
-    background-color: #ff6666;
-    color: white;
-    border-radius: 5px;
-    font-size: 14px;
-}
-
-table button:hover {
-    background-color: #e55d5d;
-}
-
-/* Modal Styling */
 .modal {
     display: none;
     position: fixed;
@@ -130,15 +158,22 @@ table button:hover {
     cursor: pointer;
 }
 
-.close:hover {
-    color: black;
+.form-row {
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: space-between; /* Space between the items */
+    margin-bottom: 15px; /* Add some space below each row */
 }
 
-input[type="text"], input[type="number"], input[type="date"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    font-size: 16px;
+.form-group {
+    flex: 1; /* Allow each group to take equal width */
+    margin-right: 10px; /* Space between each form group */
+}
+
+.form-group:last-child {
+    margin-right: 0; /* Remove margin for the last item */
+}
+
+label {
+    margin-bottom: 5px; /* Space between label and input */
+    display: block; /* Ensure labels are block elements */
 }
